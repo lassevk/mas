@@ -4,7 +4,7 @@ using JetBrains.Annotations;
 
 namespace MAS.Services.Core
 {
-    public class DebugLogDestination : ILogDestination
+    internal class DebugLogDestination : ILogDestination
     {
         [NotNull]
         private readonly ITextLogFormatter _TextLogFormatter;

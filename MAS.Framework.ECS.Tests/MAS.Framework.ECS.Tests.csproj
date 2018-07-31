@@ -1,16 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit.3.10.1\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{528FBE03-B7EB-40C0-9E7E-2417E7878D22}</ProjectGuid>
+    <ProjectGuid>{F833E38C-51C0-403B-AC56-7736FF14C7F9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MAS.App.Core</RootNamespace>
-    <AssemblyName>MAS.App.Core</AssemblyName>
+    <RootNamespace>MAS.Framework.ECS.Tests</RootNamespace>
+    <AssemblyName>MAS.Framework.ECS.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,6 +36,9 @@
     <Reference Include="JetBrains.Annotations, Version=2018.2.1.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <HintPath>..\packages\JetBrains.Annotations.2018.2.1\lib\net20\JetBrains.Annotations.dll</HintPath>
     </Reference>
+    <Reference Include="nunit.framework, Version=3.10.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.10.1\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,19 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppBootStrapper.cs" />
-    <Compile Include="ApplicationEntryPoint.cs" />
+    <Compile Include="ApiTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServicesBootstrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MAS.Framework.Container\MAS.Framework.Container.csproj">
-      <Project>{f8491bf2-61e4-4d70-88ce-5b9ac3dd9535}</Project>
-      <Name>MAS.Framework.Container</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MAS.Framework.Core\MAS.Framework.Core.csproj">
       <Project>{f01cf64a-92cf-487b-961b-5fc050568157}</Project>
       <Name>MAS.Framework.Core</Name>
@@ -64,14 +64,16 @@
       <Project>{825c3c92-dc9c-4c96-84d6-3c4df4f934c2}</Project>
       <Name>MAS.Framework.ECS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MAS.Services.Core\MAS.Services.Core.csproj">
-      <Project>{f5f0ab60-a4c2-4d00-adfd-9d85015e80e1}</Project>
-      <Name>MAS.Services.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MAS.Services\MAS.Services.csproj">
-      <Project>{8f8ef938-1cd7-4272-bc53-3fe5ace733c7}</Project>
-      <Name>MAS.Services</Name>
+    <ProjectReference Include="..\MAS.Tests.Framework\MAS.Tests.Framework.csproj">
+      <Project>{3cc799b6-7ce7-4736-b82f-909b37fbfe54}</Project>
+      <Name>MAS.Tests.Framework</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.10.1\build\NUnit.props'))" />
+  </Target>
 </Project>

@@ -13,7 +13,9 @@ namespace MAS.App.Core
         {
             IServiceContainer container = new ContainerFactory().Create();
 
-            container.Bootstrap<ServicesBootstrapper>().Bootstrap<Services.Core.ServicesBootstrapper>();
+            container.Bootstrap<ServicesBootstrapper>()
+               .Bootstrap<Services.Core.ServicesBootstrapper>()
+               .Bootstrap<Framework.ECS.ServicesBootstrapper>();
 
             return container;
         }
