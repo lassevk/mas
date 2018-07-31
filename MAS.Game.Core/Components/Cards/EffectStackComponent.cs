@@ -45,5 +45,7 @@ namespace MAS.Game.Core.Components.Cards
         }
 
         public IEnumerable<object> GetEffects() => _Effects.ToList();
+
+        public override string ToString() => $"EffectStack = {string.Join(", ", _Effects)}";
     }
 }

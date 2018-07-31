@@ -10,5 +10,7 @@
         public int Amount { get; }
 
         int IToughnessAdjustmentEffect.Adjustment => -Amount;
+
+        public override string ToString() => $"{Amount} damage";
     }
 }

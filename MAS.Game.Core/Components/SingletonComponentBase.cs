@@ -8,6 +8,6 @@ namespace MAS.Game.Core.Components
         [NotNull]
         public static T Instance { get; } = new T();
 
-        public override string ToString() => GetType().Name;
+        public override string ToString() => GetType().Name.Replace("Component", "");
     }
 }

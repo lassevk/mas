@@ -4,5 +4,7 @@
     {
         int IPowerAdjustmentEffect.Adjustment => 1;
         int IToughnessAdjustmentEffect.Adjustment => 1;
+
+        public override string ToString() => "+1/+1";
     }
 }

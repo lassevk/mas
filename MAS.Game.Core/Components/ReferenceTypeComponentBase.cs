@@ -15,6 +15,6 @@ namespace MAS.Game.Core.Components
         [NotNull]
         public T Value { get; }
 
-        public override string ToString() => $"{GetType().Name} = {Value}";
+        public override string ToString() => $"{GetType().Name.Replace("Component", "")} = {Value}";
     }
 }
