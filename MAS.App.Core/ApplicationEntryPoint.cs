@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Threading;
 
 using JetBrains.Annotations;
 
 using MAS.Services.Application;
+using MAS.Services.Game;
 using MAS.Services.Logging;
 
 namespace MAS.App.Core
@@ -15,20 +15,33 @@ namespace MAS.App.Core
         [NotNull]
         private readonly ILogger _Logger;
 
-        public ApplicationEntryPoint([NotNull] ILogger logger)
+        [NotNull]
+        private readonly IGameEngine _GameEngine;
+
+        public ApplicationEntryPoint([NotNull] ILogger logger, [NotNull] IGameEngine gameEngine)
         {
             _Logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _GameEngine = gameEngine ?? throw new ArgumentNullException(nameof(gameEngine));
         }
 
         public void Execute()
         {
             Stopwatch sw = Stopwatch.StartNew();
-
             _Logger.Verbose("Application starting");
-            Thread.Sleep(1000);
+            try
+            {
+                _GameEngine.Run();
+                
+                sw.Stop();
+                _Logger.Verbose($"Application terminated successfully after {sw.ElapsedMilliseconds}ms");
+            }
+            catch (Exception)
+            {
+                sw.Stop();
+                _Logger.Verbose($"Application terminated with an error after {sw.ElapsedMilliseconds}ms");
 
-            sw.Stop();
-            _Logger.Verbose($"Application terminated successfully after {sw.ElapsedMilliseconds}ms");
+                throw;
+            }
         }
     }
 }

@@ -1,6 +1,9 @@
 ﻿using System;
 
 using MAS.Services.ECS;
+using MAS.Services.Logging;
+
+using NSubstitute;
 
 using NUnit.Framework;
 
@@ -19,7 +22,7 @@ namespace MAS.Framework.ECS.Tests
         [SetUp]
         public void SetUp()
         {
-            _Container = new EntityContainer();
+            _Container = new EntityContainer(new ISystem[0], Substitute.For<ILogger>());
             
             _Entity = _Container.CreateEntity();
         }
@@ -96,7 +99,7 @@ namespace MAS.Framework.ECS.Tests
             _Entity.SetComponent(input);
             _Entity.RemoveComponent<string>();
 
-            var output = _Entity.TryGetComponent(out string component);
+            var output = _Entity.TryGetComponent(out string _);
 
             Assert.That(output, Is.False);
         }

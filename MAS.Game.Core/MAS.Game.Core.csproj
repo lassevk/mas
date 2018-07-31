@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6E9B1AEE-AD39-4D84-9AB3-78B21F063074}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MAS.Game.Core</RootNamespace>
+    <AssemblyName>MAS.Game.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;JETBRAINS_ANNOTATIONS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JetBrains.Annotations, Version=2018.2.1.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.2018.2.1\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\Cards\CardComponent.cs" />
+    <Compile Include="Components\Cards\Creatures\PowerComponent.cs" />
+    <Compile Include="Components\Cards\Creatures\ToughnessComponent.cs" />
+    <Compile Include="Components\Cards\EffectStackComponent.cs" />
+    <Compile Include="Components\Cards\StaticCastingCostComponent.cs" />
+    <Compile Include="Components\Cards\StaticNameComponent.cs" />
+    <Compile Include="Components\Cards\Creatures\StaticPowerComponent.cs" />
+    <Compile Include="Components\Cards\Creatures\StaticToughnessComponent.cs" />
+    <Compile Include="Components\Cards\Creatures\StaticCreatureComponent.cs" />
+    <Compile Include="Components\Cards\Creatures\StaticCreatureTypeComponent.cs" />
+    <Compile Include="Components\Cards\MultiverseIdComponent.cs" />
+    <Compile Include="Components\SingletonComponentBase.cs" />
+    <Compile Include="Components\ReferenceTypeComponentBase.cs" />
+    <Compile Include="Components\ValueTypeComponentBase.cs" />
+    <Compile Include="DeckCreator.cs" />
+    <Compile Include="Effects\Creatures\PlusOnePlusOneCounterEffect.cs" />
+    <Compile Include="GameEngine.cs" />
+    <Compile Include="IDeckCreator.cs" />
+    <Compile Include="Effects\Creatures\IPowerAdjustmentEffect.cs" />
+    <Compile Include="Effects\Creatures\IToughnessAdjustmentEffect.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicesBootstrapper.cs" />
+    <Compile Include="Systems\CalculatedComponents\PowerSystem.cs" />
+    <Compile Include="Systems\CalculatedComponents\ToughnessSystem.cs" />
+    <Compile Include="Systems\CardDetailsProviderSystem.cs" />
+    <Compile Include="Systems\CardPreparationSystem.cs" />
+    <Compile Include="Systems\ZombiesGainsPlusOnePlusOneCounterSystem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MAS.Framework.Core\MAS.Framework.Core.csproj">
+      <Project>{f01cf64a-92cf-487b-961b-5fc050568157}</Project>
+      <Name>MAS.Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MAS.Services\MAS.Services.csproj">
+      <Project>{8f8ef938-1cd7-4272-bc53-3fe5ace733c7}</Project>
+      <Name>MAS.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

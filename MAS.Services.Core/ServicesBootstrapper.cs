@@ -1,7 +1,5 @@
 ﻿using System.Diagnostics;
 
-using JetBrains.Annotations;
-
 using MAS.Framework.Core;
 using MAS.Services.Application;
 using MAS.Services.Logging;
@@ -9,10 +7,9 @@ using MAS.Services.SystemEnvironment;
 
 namespace MAS.Services.Core
 {
-    [PublicAPI]
     public class ServicesBootstrapper : IServicesBootstrapper
     {
-        public void Bootstrap([NotNull] IServiceRegistrar registrar)
+        public void Bootstrap(IServiceRegistrar registrar)
         {
             registrar.Register<ITextLogFormatter, TextLogFormatter>();
             registrar.RegisterSingleton<IClock, SystemClock>();

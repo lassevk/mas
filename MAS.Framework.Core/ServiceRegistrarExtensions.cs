@@ -4,7 +4,6 @@ using JetBrains.Annotations;
 
 namespace MAS.Framework.Core
 {
-    [PublicAPI]
     public static class ServiceRegistrarExtensions
     {
         [NotNull]

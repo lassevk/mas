@@ -2,7 +2,6 @@
 
 namespace MAS.Services.Logging
 {
-    [PublicAPI]
     public interface ILogDestination
     {
         void Message([NotNull] string message);

@@ -5,7 +5,6 @@ using MAS.Framework.Core;
 
 namespace MAS.App.Core
 {
-    [PublicAPI]
     public class AppBootStrapper
     {
         [NotNull]
@@ -15,7 +14,8 @@ namespace MAS.App.Core
 
             container.Bootstrap<ServicesBootstrapper>()
                .Bootstrap<Services.Core.ServicesBootstrapper>()
-               .Bootstrap<Framework.ECS.ServicesBootstrapper>();
+               .Bootstrap<Framework.ECS.ServicesBootstrapper>()
+               .Bootstrap<Game.Core.ServicesBootstrapper>();
 
             return container;
         }

@@ -7,6 +7,7 @@ using MAS.Services.Logging;
 
 namespace MAS.App.Console
 {
+    [UsedImplicitly]
     internal class ConsoleLogDestination : ILogDestination
     {
         [NotNull]

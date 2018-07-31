@@ -2,7 +2,6 @@
 
 namespace MAS.Framework.Core
 {
-    [PublicAPI]
     public interface IServiceResolver
     {
         [NotNull]

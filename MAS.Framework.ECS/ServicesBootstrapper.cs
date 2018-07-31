@@ -1,14 +1,11 @@
-﻿using JetBrains.Annotations;
-
-using MAS.Framework.Core;
+﻿using MAS.Framework.Core;
 using MAS.Services.ECS;
 
 namespace MAS.Framework.ECS
 {
-    [PublicAPI]
     public class ServicesBootstrapper : IServicesBootstrapper
     {
-        public void Bootstrap([NotNull] IServiceRegistrar registrar)
+        public void Bootstrap(IServiceRegistrar registrar)
         {
             registrar.RegisterSingleton<IEntityContainer, EntityContainer>();
         }

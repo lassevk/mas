@@ -1,8 +1,5 @@
-﻿using JetBrains.Annotations;
-
-namespace MAS.Services.Application
+﻿namespace MAS.Services.Application
 {
-    [PublicAPI]
     public interface IApplicationOptions
     {
         bool IsDebug { get; }

@@ -6,7 +6,6 @@ using JetBrains.Annotations;
 
 namespace MAS.Framework.Core
 {
-    [PublicAPI]
     public static class ReSharperHelpers
     {
         [ContractAnnotation("instance:null => halt"), NotNull]

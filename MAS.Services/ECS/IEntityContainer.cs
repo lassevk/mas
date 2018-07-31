@@ -2,9 +2,9 @@
 
 namespace MAS.Services.ECS
 {
-    [PublicAPI]
     public interface IEntityContainer
     {
+        [NotNull]
         IEntity CreateEntity();
     }
 }

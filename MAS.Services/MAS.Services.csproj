@@ -45,6 +45,9 @@
   <ItemGroup>
     <Compile Include="Application\IApplicationEntryPoint.cs" />
     <Compile Include="Application\IApplicationOptions.cs" />
+    <Compile Include="ECS\EntityExtensions.cs" />
+    <Compile Include="ECS\ISystem.cs" />
+    <Compile Include="Game\IGameEngine.cs" />
     <Compile Include="SystemEnvironment\IClock.cs" />
     <Compile Include="ECS\IEntity.cs" />
     <Compile Include="ECS\IEntityContainer.cs" />

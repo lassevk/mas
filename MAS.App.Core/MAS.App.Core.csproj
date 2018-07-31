@@ -64,6 +64,10 @@
       <Project>{825c3c92-dc9c-4c96-84d6-3c4df4f934c2}</Project>
       <Name>MAS.Framework.ECS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MAS.Game.Core\MAS.Game.Core.csproj">
+      <Project>{6e9b1aee-ad39-4d84-9ab3-78b21f063074}</Project>
+      <Name>MAS.Game.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MAS.Services.Core\MAS.Services.Core.csproj">
       <Project>{f5f0ab60-a4c2-4d00-adfd-9d85015e80e1}</Project>
       <Name>MAS.Services.Core</Name>
