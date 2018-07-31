@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\Cards\CardComponent.cs" />
+    <Compile Include="Components\Cards\Creatures\CreatureDiedComponent.cs" />
     <Compile Include="Components\Cards\Creatures\PowerComponent.cs" />
     <Compile Include="Components\Cards\Creatures\ToughnessComponent.cs" />
     <Compile Include="Components\Cards\EffectStackComponent.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="Components\ReferenceTypeComponentBase.cs" />
     <Compile Include="Components\ValueTypeComponentBase.cs" />
     <Compile Include="DeckCreator.cs" />
+    <Compile Include="Effects\Creatures\CreatureDamageEffect.cs" />
     <Compile Include="Effects\Creatures\PlusOnePlusOneCounterEffect.cs" />
     <Compile Include="GameEngine.cs" />
     <Compile Include="IDeckCreator.cs" />
@@ -69,6 +71,7 @@
     <Compile Include="Systems\CalculatedComponents\ToughnessSystem.cs" />
     <Compile Include="Systems\CardDetailsProviderSystem.cs" />
     <Compile Include="Systems\CardPreparationSystem.cs" />
+    <Compile Include="Systems\CreatureKilledSystem.cs" />
     <Compile Include="Systems\ZombiesGainsPlusOnePlusOneCounterSystem.cs" />
   </ItemGroup>
   <ItemGroup>

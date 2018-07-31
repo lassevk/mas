@@ -11,7 +11,6 @@ using MAS.Services.Logging;
 
 namespace MAS.Game.Core.Systems
 {
-    [UsedImplicitly]
     internal class ZombiesGainsPlusOnePlusOneCounterSystem : ISystem
     {
         [NotNull]

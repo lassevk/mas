@@ -9,7 +9,6 @@ using MAS.Services.Logging;
 
 namespace MAS.App.Core
 {
-    [UsedImplicitly]
     internal class ApplicationEntryPoint : IApplicationEntryPoint
     {
         [NotNull]

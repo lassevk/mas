@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 using MAS.Game.Core.Components.Cards;
 using MAS.Game.Core.Components.Cards.Creatures;
-using MAS.Game.Core.Effects.Creatures;
 using MAS.Services.ECS;
 
 namespace MAS.Game.Core.Systems

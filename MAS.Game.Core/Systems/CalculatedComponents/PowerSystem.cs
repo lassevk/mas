@@ -11,7 +11,6 @@ using MAS.Services.ECS;
 
 namespace MAS.Game.Core.Systems.CalculatedComponents
 {
-    [UsedImplicitly]
     internal class PowerSystem : ISystem
     {
         public IEnumerable<Type> ReactsToComponentTypes() => new [] { typeof(StaticCreatureComponent), typeof(StaticPowerComponent), typeof(EffectStackComponent) };
@@ -30,7 +29,7 @@ namespace MAS.Game.Core.Systems.CalculatedComponents
             var adjustments = entity.GetComponentOrDefault<EffectStackComponent>()
                                 ?.GetEffects()
                                 ?.OfType<IPowerAdjustmentEffect>()
-                                ?.Sum(pae => pae.Adjustment)
+                                 .Sum(pae => pae.Adjustment)
                            ?? 0;
 
             entity.SetComponent(new PowerComponent(basePower + adjustments));

@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using JetBrains.Annotations;
-
 using MAS.Game.Core.Components.Cards;
 using MAS.Services.ECS;
 
 namespace MAS.Game.Core.Systems
 {
-    [UsedImplicitly]
     internal class CardPreparationSystem : ISystem
     {
         public IEnumerable<Type> ReactsToComponentTypes() => new [] { typeof(CardComponent) };

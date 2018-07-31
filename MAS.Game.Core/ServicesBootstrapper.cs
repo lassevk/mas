@@ -20,6 +20,7 @@ namespace MAS.Game.Core
             registrar.Register<ISystem, ToughnessSystem>();
 
             registrar.Register<ISystem, ZombiesGainsPlusOnePlusOneCounterSystem>();
+            registrar.Register<ISystem, CreatureKilledSystem>();
         }
     }
 }
