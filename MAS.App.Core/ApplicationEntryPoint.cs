@@ -4,7 +4,8 @@ using System.Threading;
 
 using JetBrains.Annotations;
 
-using MAS.Services;
+using MAS.Services.Application;
+using MAS.Services.Logging;
 
 namespace MAS.App.Core
 {

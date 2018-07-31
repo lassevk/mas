@@ -1,6 +1,7 @@
 ﻿using JetBrains.Annotations;
 
 using MAS.Framework.Core;
+using MAS.Services.ECS;
 
 namespace MAS.Framework.ECS
 {
@@ -9,6 +10,7 @@ namespace MAS.Framework.ECS
     {
         public void Bootstrap([NotNull] IServiceRegistrar registrar)
         {
+            registrar.RegisterSingleton<IEntityContainer, EntityContainer>();
         }
     }
 }

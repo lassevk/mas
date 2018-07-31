@@ -1,5 +1,5 @@
 ﻿using MAS.Framework.Core;
-using MAS.Services;
+using MAS.Services.Logging;
 
 namespace MAS.App.Console
 {

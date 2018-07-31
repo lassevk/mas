@@ -3,6 +3,9 @@
 using JetBrains.Annotations;
 
 using MAS.Framework.Core;
+using MAS.Services.Application;
+using MAS.Services.Logging;
+using MAS.Services.SystemEnvironment;
 
 namespace MAS.Services.Core
 {

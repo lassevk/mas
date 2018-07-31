@@ -1,7 +1,7 @@
 ﻿using JetBrains.Annotations;
 
 using MAS.Framework.Core;
-using MAS.Services;
+using MAS.Services.Application;
 
 namespace MAS.App.Core
 {

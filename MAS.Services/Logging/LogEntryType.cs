@@ -1,4 +1,4 @@
-﻿namespace MAS.Services
+﻿namespace MAS.Services.Logging
 {
     public enum LogEntryType
     {

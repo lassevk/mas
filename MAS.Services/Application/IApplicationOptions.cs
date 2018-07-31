@@ -1,6 +1,6 @@
 ﻿using JetBrains.Annotations;
 
-namespace MAS.Services
+namespace MAS.Services.Application
 {
     [PublicAPI]
     public interface IApplicationOptions

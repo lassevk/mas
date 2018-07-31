@@ -2,7 +2,7 @@
 
 using JetBrains.Annotations;
 
-namespace MAS.Services
+namespace MAS.Services.Logging
 {
     [PublicAPI]
     public interface ITextLogFormatter

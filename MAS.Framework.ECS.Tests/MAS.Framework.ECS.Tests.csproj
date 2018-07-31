@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiTests.cs" />
+    <Compile Include="EntityTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +64,10 @@
     <ProjectReference Include="..\MAS.Framework.ECS\MAS.Framework.ECS.csproj">
       <Project>{825c3c92-dc9c-4c96-84d6-3c4df4f934c2}</Project>
       <Name>MAS.Framework.ECS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MAS.Services\MAS.Services.csproj">
+      <Project>{8f8ef938-1cd7-4272-bc53-3fe5ace733c7}</Project>
+      <Name>MAS.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\MAS.Tests.Framework\MAS.Tests.Framework.csproj">
       <Project>{3cc799b6-7ce7-4736-b82f-909b37fbfe54}</Project>

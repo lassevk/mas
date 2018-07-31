@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 
+using MAS.Services.Application;
+
 namespace MAS.Services.Core
 {
     internal class ApplicationOptions : IApplicationOptions

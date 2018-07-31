@@ -4,6 +4,9 @@ using System.IO;
 
 using JetBrains.Annotations;
 
+using MAS.Services.Logging;
+using MAS.Services.SystemEnvironment;
+
 namespace MAS.Services.Core
 {
     internal class TextLogFormatter : ITextLogFormatter

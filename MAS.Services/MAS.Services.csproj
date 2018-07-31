@@ -43,17 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IApplicationEntryPoint.cs" />
-    <Compile Include="IApplicationOptions.cs" />
-    <Compile Include="IClock.cs" />
-    <Compile Include="ILogDestination.cs" />
-    <Compile Include="ILogger.cs" />
-    <Compile Include="ITextLogFormatter.cs" />
-    <Compile Include="LogEntryType.cs" />
+    <Compile Include="Application\IApplicationEntryPoint.cs" />
+    <Compile Include="Application\IApplicationOptions.cs" />
+    <Compile Include="SystemEnvironment\IClock.cs" />
+    <Compile Include="ECS\IEntity.cs" />
+    <Compile Include="ECS\IEntityContainer.cs" />
+    <Compile Include="Logging\ILogDestination.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\ITextLogFormatter.cs" />
+    <Compile Include="Logging\LogEntryType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

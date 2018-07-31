@@ -3,7 +3,8 @@ using System.Diagnostics;
 
 using MAS.App.Core;
 using MAS.Framework.Core;
-using MAS.Services;
+using MAS.Services.Application;
+using MAS.Services.Logging;
 
 namespace MAS.App.Console
 {

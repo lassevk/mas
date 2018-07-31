@@ -2,6 +2,8 @@
 
 using JetBrains.Annotations;
 
+using MAS.Services.Logging;
+
 namespace MAS.Services.Core
 {
     internal class DebugLogDestination : ILogDestination
